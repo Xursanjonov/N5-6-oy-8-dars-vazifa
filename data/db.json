@@ -13,12 +13,39 @@
             "info": "BMW 7 Series 740d xDrive",
             "createdAt": "2024-05-18T01:33:28.839Z",
             "img": "https://i.ytimg.com/vi/TAZq5Y-6otI/maxresdefault.jpg"
+        },
+        {
+            "id": 2,
+            "title": "BMW 7 series xDrive",
+            "brand": "BMW",
+            "category": "Cars",
+            "price": {
+                "oldPrice": "150000",
+                "newPrice": "118000"
+            },
+            "count": 3,
+            "info": "BMW 7 Series 740d xDrive",
+            "createdAt": "2024-05-18T01:33:28.839Z",
+            "img": "https://i.ytimg.com/vi/TAZq5Y-6otI/maxresdefault.jpg"
         }
     ],
     "users": [
         {
             "id": 1,
             "fullName": "Anvar Komilov",
+            "username": "@komilov",
+            "phoneNumber": "+998901234567",
+            "age": 20,
+            "email": "anvar@gmail.com",
+            "password": "12345",
+            "gender": "Male",
+            "isMarried": false,
+            "createdAt": "2024-05-16T05:03:44.965Z",
+            "img": "https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=1732"
+        },
+        {
+            "id": 2,
+            "fullName": "Sobir Komilov",
             "username": "@komilov",
             "phoneNumber": "+998901234567",
             "age": 20,

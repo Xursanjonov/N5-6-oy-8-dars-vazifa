@@ -1,6 +1,7 @@
 import React, { memo } from 'react'
 
 const UserItem = ({ user }) => {
+    
     return (
         <div className="w-[300px] h-[540px] mx-auto border-2 flex flex-col gap-4 rounded-xl">
             <figure className='w-[296px] h-[300px]'>
@@ -27,8 +28,12 @@ const UserItem = ({ user }) => {
                     <h4 className='text-lg font-bold'>
                         IsMarreid: {user.isMarried ? '✅' : '❌'}
                     </h4>
-                    <button className='px-2 py-1 rounded-md bg-orange-500' > <i class="fa-solid fa-trash"></i> </button>
-                    <button className='px-2 py-1 rounded-md bg-orange-500' > edit </button>
+                    <button className='ms-10 px-2 py-1 rounded-md bg-red-500' >
+                        <i className="text-white fa-solid fa-trash"></i>
+                    </button>
+                    <button className='px-2 py-1 rounded-md bg-orange-400' >
+                        <i className="text-white fa-solid fa-pen-to-square"></i>
+                    </button>
                 </div>
             </div>
         </div>

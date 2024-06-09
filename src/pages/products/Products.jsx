@@ -1,22 +1,20 @@
-import React, { memo, useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import React, { memo, useEffect, useState } from 'react'
 import { nanoid } from 'nanoid'
 import ProductsWrapper from '../../components/products-wrapper/ProductsWrapper'
-import { postProduct } from '../../context/slice/productsSlice'
-
-export const baseUrl = 'http://localhost:3003'
-export const headers = { 'Content-Type': 'application/json' }
 
 const Products = () => {
-    const data = useSelector(state => state.products)
-    const dispatch = useDispatch()
+    const [data, setData] = useState([])
 
     useEffect(() => {
-        fetch(baseUrl + '/products', { headers })
+        fetch('http://localhost:3003/products', { headers: { 'Content-Type': 'application/json' } })
             .then(res => res.json())
-            .then(res => dispatch(postProduct(...res)))
+            .then(res => setData([...res]))
             .catch(er => console.error(er))
     }, [])
+    console.log(data);
+    useEffect(() => {
+        localStorage.setItem('products-data', JSON.stringify(data))
+    }, [data])
 
     return (
         <section>

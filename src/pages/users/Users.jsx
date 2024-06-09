@@ -1,24 +1,23 @@
-import React, { memo, useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import React, { memo, useEffect, useState } from 'react'
 import { nanoid } from 'nanoid'
-import { baseUrl, headers } from '../products/Products'
 import UserWrapper from '../../components/users-wrapper/UserWrapper'
-import { postUser } from '../../context/slice/usersSlice'
 
 const Users = () => {
-    const users = useSelector(state => state.users)
-    const dispatch = useDispatch()
+    const [data, setData] = useState([])
 
     useEffect(() => {
-        fetch(baseUrl + '/users', { headers })
+        fetch('http://localhost:3003/users', { headers: { 'Content-Type': 'application/json' } })
             .then(res => res.json())
-            .then(res => dispatch(postUser(...res)))
+            .then(res => setData([...res]))
             .catch(er => console.error(er))
+    }, [])
+    useEffect(() => {
+        localStorage.setItem('users-data', JSON.stringify(data))
     }, [])
 
     return (
         <section>
-            <UserWrapper key={nanoid()} title={'Users'} users={users} />
+            <UserWrapper key={nanoid()} title={'Users'} users={data} />
         </section>
     )
 }
